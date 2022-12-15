@@ -56,7 +56,7 @@ func main() {
 	var noun, verb int
 	var desired = 19690720
 
-	loop:
+loop:
 	for noun = 0; noun < 100; noun++ {
 		for verb = 0; verb < 100; verb++ {
 			output := run(noun, verb, code)
@@ -66,6 +66,6 @@ func main() {
 		}
 	}
 
-	fmt.Println(noun * 100 + verb)
+	fmt.Println(noun*100 + verb)
 
 }

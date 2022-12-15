@@ -26,7 +26,7 @@ func makeImage(data string, w, h int) image {
 		intData[i] = int(s - '0')
 	}
 
-	return image{data: intData, w:w, h:h, L: layers}
+	return image{data: intData, w: w, h: h, L: layers}
 }
 
 func (img *image) getIndex(layer, i, j int) int {

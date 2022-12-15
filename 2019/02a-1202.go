@@ -20,7 +20,6 @@ func main() {
 	code[1] = 12
 	code[2] = 2
 
-
 	i := 0
 
 loop:
