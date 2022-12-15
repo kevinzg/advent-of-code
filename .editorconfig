@@ -12,3 +12,6 @@ trim_trailing_whitespace = true
 
 [*.lua]
 indent_size = 3
+
+[*.go]
+indent_style = tab
