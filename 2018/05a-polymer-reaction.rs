@@ -1,5 +1,5 @@
-use std::io;
 use std::collections::VecDeque;
+use std::io;
 
 enum ReactionResult {
     Boom,
@@ -40,7 +40,7 @@ fn main() {
         match react(&pol, prev, curr) {
             ReactionResult::Boom => {
                 st.pop_back();
-            },
+            }
             ReactionResult::Nope => {
                 st.push_back(curr);
             }

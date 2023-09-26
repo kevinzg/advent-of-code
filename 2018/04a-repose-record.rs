@@ -8,13 +8,14 @@ struct Interval(Vec<char>);
 
 impl Interval {
     fn new() -> Self {
-        Interval(
-            ['.'].repeat(60)
-        )
+        Interval(['.'].repeat(60))
     }
 
     fn score(&self) -> i32 {
-        self.0.iter().map(|c| if *c == '#' { 1 } else { 0 }).fold(0, |acc, x| acc + x)
+        self.0
+            .iter()
+            .map(|c| if *c == '#' { 1 } else { 0 })
+            .fold(0, |acc, x| acc + x)
     }
 }
 
@@ -55,7 +56,6 @@ fn main() {
                 .next()
                 .unwrap()
                 .to_owned();
-
         } else {
             let event_type = if event.contains("falls asleep") {
                 '#'
@@ -63,7 +63,11 @@ fn main() {
                 '.'
             };
 
-            let mut time = event.split(' ').skip(1).next().unwrap()
+            let mut time = event
+                .split(' ')
+                .skip(1)
+                .next()
+                .unwrap()
                 .split(|c: char| c.is_ascii_punctuation());
             let hour: i32 = time.next().unwrap().parse().unwrap();
             let minute: i32 = time.next().unwrap().parse().unwrap();
